@@ -1,5 +1,6 @@
 const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const StrictCspHtmlWebpackPlugin = require('strict-csp-html-webpack-plugin');
 const { SRC } = require('./constants');
 
 module.exports = {
@@ -13,6 +14,7 @@ module.exports = {
       template: 'index.html',
       inject: 'body',
     }),
+    new StrictCspHtmlWebpackPlugin(HtmlWebpackPlugin),
   ],
   module: {
     rules: [
